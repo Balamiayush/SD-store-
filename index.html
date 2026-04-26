@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SD Store | Luxury Watches - 10 RO</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f5f5;
+      color: #111;
+    }
+
+    h1, h2, h3 {
+      font-family: 'League Spartan', sans-serif;
+    }
+
+    .top-bar {
+      height: 42px;
+      background: #000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 45px;
+      font-size: 12px;
+      letter-spacing: 3px;
+    }
+
+    header {
+      height: 95px;
+      background: #f4f4f4;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 55px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-box {
+      width: 52px;
+      height: 52px;
+      background: #000000;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 24px;
+      border-radius: 12px;
+    }
+
+    .logo h1 {
+      font-size: 32px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #bc3f00;
+    }
+
+    .cart-icon {
+      border: none;
+      background: none;
+      font-size: 24px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -10px;
+      right: -12px;
+      background: #bc3f00;
+      color: white;
+      font-size: 11px;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+
+    .hero {
+      min-height: 720px;
+      background: linear-gradient(to right, #000 0%, rgba(0,0,0,0.85) 42%, rgba(0,0,0,0.15) 100%), url("watch.jpg");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      padding-left: 105px;
+      color: white;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .tag {
+      color: #df7640;
+      letter-spacing: 8px;
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .hero h2 {
+      font-size: 95px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero h3 {
+      letter-spacing: 6px;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 45px;
+      opacity: 0.9;
+    }
+
+    .main-btn {
+      background: #bc3f00;
+      color: white;
+      padding: 16px 42px;
+      text-decoration: none;
+      letter-spacing: 4px;
+      font-weight: 600;
+      display: inline-block;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .main-btn:hover {
+      background: white;
+      color: #bc3f00;
+    }
+
+    .collections {
+      display: flex;
+      height: 480px;
+    }
+
+    .collection-card {
+      width: 50%;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+
+    .collection-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      transition: 0.3s;
+    }
+
+    .collection-card:hover::before {
+      background: rgba(0,0,0,0.3);
+    }
+
+    .men-card {
+      background-image: url("images-men/man1.png");
+    }
+
+    .women-card {
+      background-image: url("images-women/women1.png");
+    }
+
+    .collection-text {
+      position: absolute;
+      left: 55px;
+      bottom: 55px;
+      z-index: 2;
+      color: white;
+    }
+
+    .collection-text p {
+      letter-spacing: 6px;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .collection-text h2 {
+      font-size: 65px;
+      margin-bottom: 12px;
+    }
+
+    .collection-text a {
+      color: white;
+      text-decoration: none;
+      letter-spacing: 4px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .section {
+      padding: 80px 60px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      color: #bc3f00;
+      letter-spacing: 5px;
+      font-size: 14px;
+      margin-bottom: 45px;
+    }
+
+    .products {
+      background: #f4f4f4;
+    }
+
+    .products.white {
+      background: white;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .product {
+      background: white;
+      padding: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      border-radius: 16px;
+    }
+
+    .product:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 45px rgba(0,0,0,0.12);
+    }
+
+    .product img {
+      width: 100%;
+      height: 260px;
+      object-fit: contain;
+      background: #fafafa;
+      padding: 10px;
+    }
+
+    .product h3 {
+      margin: 15px 0 8px;
+      font-size: 18px;
+    }
+
+    .product p {
+      font-weight: 700;
+      font-size: 20px;
+      color: #bc3f00;
+      margin-bottom: 18px;
+    }
+
+    .product button {
+      background: #1a1a1a;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 12px 25px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      font-weight: 600;
+      border-radius: 40px;
+      transition: 0.3s;
+    }
+
+    .product button:hover {
+      background: #bc3f00;
+    }
+
+    .video-section {
+      background: #0a0a0a;
+      color: white;
+    }
+
+    .video-box {
+      max-width: 1000px;
+      margin: auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    }
+
+    .video-box video {
+      width: 100%;
+      display: block;
+    }
+
+    .watch-3d {
+      background: #111;
+      color: white;
+    }
+
+    .view-3d-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .view-3d-card {
+      background: #1e1e1e;
+      padding: 25px;
+      border: 1px solid #333;
+      transition: 0.3s;
+      border-radius: 16px;
+      cursor: pointer;
+    }
+
+    .view-3d-card:hover {
+      transform: translateY(-8px);
+      border-color: #bc3f00;
+    }
+
+    .view-3d-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: contain;
+    }
+
+    .view-3d-card h3 {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    .about {
+      background: #f8f8f8;
+      color: #1a1a1a;
+      padding: 80px 20%;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      margin-bottom: 25px;
+      color: #bc3f00;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #444;
+    }
+
+    .contact {
+      background: #fff;
+      color: black;
+      padding: 80px 25%;
+      text-align: center;
+      border-top: 1px solid #eee;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact input,
+    .contact textarea {
+      padding: 14px 18px;
+      border: 1px solid #ddd;
+      font-size: 15px;
+      border-radius: 12px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact textarea {
+      height: 120px;
+      resize: vertical;
+    }
+
+    .contact button {
+      background: #bc3f00;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      font-weight: 600;
+      letter-spacing: 2px;
+      border-radius: 40px;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .contact button:hover {
+      background: #1a1a1a;
+    }
+
+    /* Cart Sidebar Style - نفس التصميم القديم */
+    .cart-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cart-box {
+      background: white;
+      color: black;
+      width: 480px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 35px;
+      position: relative;
+      border-radius: 0px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 18px;
+      border: none;
+      background: none;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #ddd;
+      padding: 12px 0;
+    }
+
+    .remove-btn {
+      background: black;
+      color: white;
+      border: none;
+      padding: 5px 9px;
+      cursor: pointer;
+      border-radius: 0px;
+    }
+
+    .checkout-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .checkout-form input,
+    .checkout-form select {
+      padding: 12px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    .card-details {
+      display: none;
+      background: #f7f7f7;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    .card-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .card-row input {
+      width: 50%;
+    }
+
+    .apple-pay {
+      display: none;
+      background: black;
+      color: white;
+      border: none;
+      padding: 15px;
+      font-size: 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .checkout-btn {
+      background: #bc3f00;
+      color: white;
+      border: none;
+      padding: 14px;
+      cursor: pointer;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .success-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.78);
+      z-index: 300;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-box {
+      background: white;
+      color: black;
+      width: 420px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .checkmark {
+      width: 95px;
+      height: 95px;
+      background: #16a34a;
+      color: white;
+      border-radius: 50%;
+      font-size: 65px;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .success-box button {
+      margin-top: 25px;
+      background: black;
+      color: white;
+      border: none;
+      padding: 14px 30px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: #0a0a0a;
+      color: #666;
+      text-align: center;
+      padding: 30px;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-width: 1100px) {
+      .product-grid, .view-3d-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        display: none;
+      }
+      .hero {
+        padding: 50px 30px;
+      }
+      .hero h2 {
+        font-size: 55px;
+      }
+      .collections {
+        flex-direction: column;
+        height: auto;
+      }
+      .collection-card {
+        width: 100%;
+        height: 300px;
+      }
+      .product-grid, .view-3d-grid {
+        grid-template-columns: 1fr;
+      }
+      .section {
+        padding: 50px 25px;
+      }
+      .contact, .about {
+        padding: 60px 20px;
+      }
+      .cart-box {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">
+    <span>✦</span>
+    <p>BEST WATCH STORE IN OMAN</p>
+    <span>OMR | R.O</span>
+  </div>
+
+  <header>
+    <div class="logo">
+      <div class="logo-box">SD</div>
+      <h1>SD STORE</h1>
+    </div>
+
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#men">MEN</a>
+      <a href="#women">WOMEN</a>
+      <a href="#video">VIDEO</a>
+      <a href="#watch3d">3D</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+
+    <button class="cart-icon" onclick="openCart()">
+      <i class="fas fa-bag-shopping"></i> <span id="cart-count" class="cart-count">0</span>
+    </button>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="tag">SINCE · 2014</p>
+      <h2>SD Store</h2>
+      <h3>LUXURY TIMEPIECES</h3>
+      <p class="hero-desc">
+        Premium watches starting at just <strong>10 RO</strong>. Free delivery across Oman.<br>
+        Elegance, precision, and timeless design.
+      </p>
+      <a href="#men" class="main-btn">SHOP NOW →</a>
+    </div>
+  </section>
+
+  <section class="collections">
+    <div class="collection-card men-card" onclick="location.href='#men'">
+      <div class="collection-text">
+        <p>COLLECTION</p>
+        <h2>Men</h2>
+        <a href="#men">SHOP NOW →</a>
+      </div>
+    </div>
+    <div class="collection-card women-card" onclick="location.href='#women'">
+      <div class="collection-text">
+        <p>COLLECTION</p>
+        <h2>Women</h2>
+        <a href="#women">SHOP NOW →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section video-section" id="video">
+    <h2>SD Store Video</h2>
+    <p class="section-subtitle">WATCH COLLECTION 2026</p>
+    <div class="video-box">
+      <video controls autoplay muted loop>
+  <source src="video.mp4" type="video/mp4">
+</video>
+    </div>
+  </section>
+
+  <section class="section watch-3d" id="watch3d">
+    <h2>3D Watch View</h2>
+    <p class="section-subtitle">EXPLORE THE WATCH FROM EVERY ANGLE</p>
+    <div class="view-3d-grid" id="threeDGrid"></div>
+  </section>
+
+  <section class="section products" id="men">
+    <h2>Men Watches</h2>
+    <p class="section-subtitle">ALL WATCHES 10 RO</p>
+    <div class="product-grid" id="men-products"></div>
+  </section>
+
+  <section class="section products white" id="women">
+    <h2>Women Watches</h2>
+    <p class="section-subtitle">ALL WATCHES 10 RO</p>
+    <div class="product-grid" id="women-products"></div>
+  </section>
+
+  <section class="about" id="about">
+    <h2>About SD Store</h2>
+    <p>
+      SD Store is an Omani watch shop offering elegant and affordable watches for men and women.<br>
+      Our goal is to provide a luxury shopping experience with timeless designs, premium quality, and exceptional customer service.<br>
+      All watches are priced at just 10 RO with free delivery across Oman.
+    </p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form id="contactForm" onsubmit="sendMessage(event)">
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <input type="email" id="contactEmail" placeholder="Email Address" required>
+      <input type="tel" id="contactPhone" placeholder="Phone Number">
+      <textarea id="contactMsg" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Cart Sidebar - بنفس التصميم القديم -->
+  <div class="cart-overlay" id="cart-overlay">
+    <div class="cart-box">
+      <button class="close-btn" onclick="closeCart()">×</button>
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <h3>Total: <span id="total">0</span> RO</h3>
+      <h2>Checkout</h2>
+      <form class="checkout-form" onsubmit="confirmOrder(event)">
+        <input type="text" id="customerName" placeholder="Full Name" required>
+        <input type="tel" id="customerPhone" placeholder="Phone Number" required>
+        <input type="text" id="customerArea" placeholder="Area of Residence" required>
+        <select id="paymentMethod" onchange="changePayment()" required>
+          <option value="">Select Payment Method</option>
+          <option value="Cash">Cash on Delivery</option>
+          <option value="Card">Card Payment</option>
+          <option value="Apple Pay">Apple Pay</option>
+        </select>
+        <div class="card-details" id="card-details">
+          <input type="text" id="cardNumber" placeholder="Card Number" maxlength="19">
+          <div class="card-row">
+            <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+            <input type="password" id="cvv" placeholder="CVV" maxlength="3">
+          </div>
+        </div>
+        <button type="button" class="apple-pay" id="apple-pay"> Apple Pay</button>
+        <button type="submit" class="checkout-btn">Confirm Order</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="success-popup" id="success-popup">
+    <div class="success-box">
+      <div class="checkmark">✓</div>
+      <h2>Order Completed!</h2>
+      <p>Thank you for shopping with SD Store</p>
+      <button onclick="closeSuccess()">Continue Shopping</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 SD Store | Best Watch Store in Oman | +968 7991 9978 | @shodymodysshh</p>
+  </footer>
+
+  <script>
+    // Product Names
+    const menNames = ["GREEN VIGUR", "WHITE CLASICO", "BLACK CLASICO", "MAROUN CLASICO", "BLUE VIGUR", "WHITE VIGUR", "GRAY FITRON", "YELLOW VIGUR"];
+    const womenNames = ["GOLD VIGUR", "BLUE CLASICO", "GRAY VIGUR", "GOLD & BLACK VIGUR", "GRAY VIGUR", "WHITE VIGUR", "GOLD CLASICO", "GOLD & GRAY CLASICO"];
+
+    // 3D Models
+    const threeDModels = [
+      { name: "Front View", image: "images-3d/front.png", badge: "360°" },
+      { name: "Side View", image: "images-3d/side.png", badge: "3D" },
+      { name: "Back View", image: "images-3d/back.png", badge: "DETAIL" },
+      { name: "Angle View", image: "images-3d/angel.png", badge: "PREMIUM" }
+    ];
+
+    let cart = [];
+    let total = 0;
+    const price = 10;
+
+    // Render 3D Section
+    function render3D() {
+      const container = document.getElementById("threeDGrid");
+      if (!container) return;
+      container.innerHTML = threeDModels.map(model => `
+        <div class="view-3d-card">
+          <img src="${model.image}" alt="${model.name}" onerror="this.src='https://placehold.co/300x300?text=3D+View'">
+          <h3>${model.name}</h3>
+          <p style="color:#df7640; margin-top:8px;">${model.badge}</p>
+        </div>
+      `).join('');
+    }
+
+    // Render Men Products
+    function renderMenProducts() {
+      const container = document.getElementById("men-products");
+      if (!container) return;
+      container.innerHTML = menNames.map((name, i) => `
+        <div class="product">
+          <img src="images-men/man${i+1}.png" alt="${name}" onerror="this.src='https://placehold.co/300x300?text=${name}'">
+          <h3>${name}</h3>
+          <p>${price} RO</p>
+          <button onclick="addToCart('${name}', ${price})">Add to Cart</button>
+        </div>
+      `).join('');
+    }
+
+    // Render Women Products
+    function renderWomenProducts() {
+      const container = document.getElementById("women-products");
+      if (!container) return;
+      container.innerHTML = womenNames.map((name, i) => `
+        <div class="product">
+          <img src="images-women/women${i+1}.png" alt="${name}" onerror="this.src='https://placehold.co/300x300?text=${name}'">
+          <h3>${name}</h3>
+          <p>${price} RO</p>
+          <button onclick="addToCart('${name}', ${price})">Add to Cart</button>
+        </div>
+      `).join('');
+    }
+
+    function addToCart(name, price) {
+      const existingItem = cart.find(item => item.name === name);
+      if (existingItem) {
+        existingItem.quantity += 1;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      updateCart();
+      openCart();
+    }
+
+    function updateCart() {
+      const cartItems = document.getElementById("cart-items");
+      const cartCount = document.getElementById("cart-count");
+      const totalBox = document.getElementById("total");
+
+      cartItems.innerHTML = "";
+      total = 0;
+      let count = 0;
+
+      cart.forEach((item, index) => {
+        total += item.price * item.quantity;
+        count += item.quantity;
+        cartItems.innerHTML += `
+          <div class="cart-item">
+            <div>
+              <strong>${item.name}</strong><br>
+              <small>${item.price} RO × ${item.quantity}</small>
+            </div>
+            <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+          </div>
+        `;
+      });
+
+      cartCount.innerText = count;
+      totalBox.innerText = total;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      updateCart();
+    }
+
+    function openCart() {
+      document.getElementById("cart-overlay").style.display = "flex";
+    }
+
+    function closeCart() {
+      document.getElementById("cart-overlay").style.display = "none";
+    }
+
+    function changePayment() {
+      const method = document.getElementById("paymentMethod").value;
+      document.getElementById("card-details").style.display = method === "Card" ? "block" : "none";
+      document.getElementById("apple-pay").style.display = method === "Apple Pay" ? "block" : "none";
+    }
+
+    async function confirmOrder(event) {
+      event.preventDefault();
+
+      if (cart.length === 0) {
+        alert("Your cart is empty");
+        return;
+      }
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const area = document.getElementById("customerArea").value.trim();
+      const method = document.getElementById("paymentMethod").value;
+
+      if (!name || !phone || !area || !method) {
+        alert("Please fill all checkout fields");
+        return;
+      }
+
+      if (method === "Card") {
+        const cardNumber = document.getElementById("cardNumber").value.trim();
+        const expiryDate = document.getElementById("expiryDate").value.trim();
+        const cvv = document.getElementById("cvv").value.trim();
+        if (!cardNumber || !expiryDate || !cvv) {
+          alert("Please fill in all card details");
+          return;
+        }
+      }
+
+      // Prepare order details for email
+      let itemsList = "";
+      cart.forEach(item => {
+        itemsList += `${item.name} x${item.quantity} = ${item.price * item.quantity} RO\n`;
+      });
+      const grandTotal = cart.reduce((sum, i) => sum + (i.price * i.quantity), 0);
+      
+      const message = `🛍️ NEW ORDER FROM SD STORE\n\n👤 Customer: ${name}\n📞 Phone: +968 ${phone}\n📍 Area: ${area}\n💳 Payment: ${method}\n\n📦 Order Details:\n${itemsList}\n💰 TOTAL: ${grandTotal} RO\n\n📅 Date: ${new Date().toLocaleString()}`;
+
+      // Send email via FormSubmit
+      const formData = new FormData();
+      formData.append("_subject", "🛍️ New Order from SD Store");
+      formData.append("_captcha", "false");
+      formData.append("message", message);
+      formData.append("_replyto", "customer@sdstore.com");
+
+      try {
+        await fetch("https://formsubmit.co/ajax/shodymodysshh@gmail.com", {
+          method: "POST",
+          body: formData
+        });
+      } catch(e) {
+        console.log("Email notification error, but order continues");
+      }
+
+      cart = [];
+      updateCart();
+      document.querySelector(".checkout-form").reset();
+      document.getElementById("card-details").style.display = "none";
+      document.getElementById("apple-pay").style.display = "none";
+      document.getElementById("paymentMethod").value = "";
+
+      closeCart();
+      document.getElementById("success-popup").style.display = "flex";
+    }
+
+    function closeSuccess() {
+      document.getElementById("success-popup").style.display = "none";
+    }
+
+    function sendMessage(event) {
+      event.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const email = document.getElementById("contactEmail").value.trim();
+      const phone = document.getElementById("contactPhone").value.trim();
+      const msg = document.getElementById("contactMsg").value.trim();
+
+      if (!name || !email || !msg) {
+        alert("Please fill Name, Email and Message");
+        return;
+      }
+
+      const message = `📩 New message from SD Store website\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${msg}`;
+      const formData = new FormData();
+      formData.append("_subject", "📩 New Contact Message");
+      formData.append("_captcha", "false");
+      formData.append("message", message);
+      formData.append("_replyto", email);
+
+      fetch("https://formsubmit.co/ajax/shodymodysshh@gmail.com", {
+        method: "POST",
+        body: formData
+      }).then(() => {
+        alert("✅ Message sent successfully! We will reply within 24 hours.");
+        document.getElementById("contactForm").reset();
+      }).catch(() => {
+        alert("Message sent! We will contact you soon.");
+        document.getElementById("contactForm").reset();
+      });
+    }
+
+    render3D();
+    renderMenProducts();
+    renderWomenProducts();
+  </script>
+
+</body>
+</html>
